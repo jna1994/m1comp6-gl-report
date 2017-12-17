@@ -1,0 +1,121 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{url}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\title{Bilan/Conclusion}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Objectifs et résultats}
+
+L'objectif principal de ce projet est de présenter une version fonctionnelle d'un compilateur/interpréteur de MiniJaja avec une interface utilisateur. Cette présentation aura lieu le vendredi 22 décembre 2017. C'est un premier résultat évaluable et qui sera évalué et sanctionné.
+
+Les outils et moyens mis en œuvre pour la réalisation de ce projet ont été évoqués dans les chapitres précédents.
+
+Nous allons synthétiser ici les éléments positifs et négatifs rencontrés pendant cette période en présentant un bilan technique puis un bilan humain du projet. Nous tenterons notamment de donner, de manière objective, les problèmes rencontrés et des pistes d'amélioration éventuelles.
+
+
+\section{Bilan technique : des outils et des méthodes}
+
+La réalisation de ce projet a été l'occasion de découvrir puis d'utiliser de nouveaux outils et méthodes, notamment pour mettre en œuvre la collaboration entre nous.
+
+\subsection{Des outils pour la collaboration}
+
+En particuliers, nous retenons l'usage de \emph{Trello} pour répartir les tâches entre nous et offrir un premier niveau de suivi de l'avancement. De même, l'utilisation de \emph{Slack} comme moyen d'échange à distance a été bénéfique.
+
+Il est à noter que contrairement à une équipe "classique" de développement, nous n'avons pas de lieu dédié au travail en équipe. En effet, nous travaillons sur le projet en dehors de la faculté principalement. Les outils comme \emph{Trello} et \emph{Slack} (ainsi que SVN pour le partage du code source), disponibles en mode \emph{SaaS}, nous ont donc grandement faciliter la communication.
+
+Il nous faut cependant évoquer certains problèmes techniques liés à la disponibilité de services tels que le serveur SVN ou le serveur Nexus, inopérants certains week-ends. Or ce sont des périodes propices au développement, et nous n'avons pas la possibilité de résoudre ces problèmes.
+
+Nous avons également rencontrés quelques problèmes à adopter des outils comme \emph{Jenkins} ou \emph{SVN}. Ces problèmes nous ont freiné pour la réalisation des premiers \emph{sprints}.
+Il nous faudrait sûrement plus de temps (plus d'expérience) pour les utiliser de manière efficace.
+
+
+\subsection{Des tests pour la qualité logicielle}
+
+La pratique du test (et du test unitaire en particulier) ne nous était pas familière avant ce projet.
+La mise en œuvre de tests unitaires a été bénéfique pour assurer un niveau de confiance suffisant de notre code. Ils ont par exemple été particulièrement utiles pour garantir la couverture de tout le langage MiniJaja.
+
+Les test unitaires ont particulièrement été salutaires lors des changements de la grammaire, pour s'assurer de la non-régression.
+
+Les tests unitaires sont également un moyen de documenter les usages d'une classe ou d'une méthode, car ils se basent sur leur exploitation. C'est un élément de partage de connaissances à ne pas négliger.
+
+Il faut cependant ne pas sous-estimer le temps de réalisation des tests unitaires qui nécessitent souvent l'écriture de classes ou méthodes utilitaires pour qu'ils restent lisibles et maintenables.
+
+De plus, la personne chargé d'écrire les tests unitaires d'un module est souvent la personne qui a développé le code du module. La mauvaise compréhension d'une fonctionnalité peut donc amener à écrire un test faux positif.
+Il aurait donc été judicieux de séparer les responsabilités entre écriture des tests et écriture du code de production au sein d'un même module.
+
+
+\subsection{Des méthodologies inspirées de l'agilité}
+
+La réalisation de ce projet a été l'occasion d'expérimenter une méthodologie de développement proche de l'agilité.
+Nous avons par exemple mis en place un cycle itératif et incrémental de développement par la mise en œuvre:
+\begin{itemize}
+\item d'un jalon intermédiaire de livraison (\emph{release 1} le 6 novembre 2017),
+\item de \emph{sprints} de deux semaines, avec un engagement de réalisations fonctionnelles,
+\item de découpage des tâches à partager et à réaliser en parallèle au sein d'une \emph{sprint}.
+\end{itemize} 
+La présentation de nos travaux à Fabrice Bouquet pour la livraison de la \emph{release 1} a notamment été concluante d'un point de vue fonctionnel.
+
+Il nous semblerait d'ailleurs judicieux d'augmenter la fréquence de livraisons intermédiaires (peut-être une livraison après deux sprints, voire après chaque sprint ?) afin de conserver une motivation régulière.
+
+La perte de motivation a pu également être liée à la difficulté de tenir l'engagement des différents \emph{sprints}. On a souvent reporté des tâches d'un \emph{sprint} au suivant, ce qui laisse une impression d'inachevé. Il est vrai qu'il est difficile de prévoir le temps de réalisation d'une tâche. Et que c'est avec l'expérience (connaissances techniques et connaissances de l'équipe) qu'on peut améliorer notre niveau de prédictibilité en estimant au plus juste le temps de développement des tâches.
+
+Cela nous amène à partager une réflexion autour du temps imparti pour réaliser un produit au périmètre fonctionnel défini.
+
+\subsection{Réflexion : temps limité contre périmètre fonctionnel}
+
+Notre projet s'inscrit sur une durée définie. La version finale du produit doit être livrée et présentée le 22 décembre. 
+Pour y parvenir, nous avons choisi de partitionner ce temps (en \emph{releases}, en \emph{sprints}, puis en tâches). 
+Or il est difficile d'estimer le temps de réalisation d'une tâche et nous avons souvent échoué à tenir nos engagements de \emph{sprint}. Pour y parvenir, il aurait sans doute fallu renégocier le périmètre fonctionnel avec le client (principe agile) et le \emph{product owner}. Nous ne l'avons pas fait, par manque d'expérience ou par confiance dans notre capacité à livrer un produit fonctionnel et de qualité dans le temps imparti.
+
+
+\section{Bilan humain : la recherche d'une équipe efficace}
+
+Ce projet est certainement l'unique occasion pour nous de travailler dans une équipe de taille réaliste pendant nos études. En effet, nous étions 6 et une équipe de développement agile est généralement constituée de 4 à 10 personnes.
+
+Travailler ensemble nécessite de se connaître, pour se comprendre. Il est pertinent par exemple de savoir qui est motivé par quelle activité lors de la répartition des tâches. Pour cela, nous nous sommes contraints à nous réunir régulièrement (au moins une fois par semaine). Cela a été très utile pour connaître l'avancement de chacun et partager des connaissances. Malheureusement, il a été difficile de réunir tous les participants à chaque réunion et la contribution d'une partie de l'équipe a été peu active.
+
+La première rétrospective a été constructive pour mettre au point les outils de communication et résoudre les éventuels conflits entre personnes.
+
+
+Par ailleurs, pendant la durée du projet, l'équipe a dû géré le départ d'un de ses membres (Adrien). Ce départ n'a pas été anticipé et les tâches non réalisées ont dû être ré-affectées. 
+L'équipe a également du considérer l'arrivée d'un nouveau membre (Mehdi) 6 semaines avant la fin du projet. Cette intégration a été rendue difficile par les disparités de connaissances techniques et fonctionnelles entre nous.
+
+Cela nous amène à une réflexion sur la manière de construire une équipe efficace.
+
+\subsection{Réflexion : faire face aux changements de ressources humaines}
+
+L'équipe a dû faire face à un départ puis une arrivé. Chaque mouvement nécessite de reconstruire l'équipe. 
+La construction d'une équipe a d'ailleurs fait l'objet d'études de la part de Bruce Tuckman\footnote{\url{https://en.wikipedia.org/wiki/Tuckman\%27s_stages_of_group_development}} (en 1965). Il identifie notamment 4 étapes de constitution d'une équipe :
+\begin{itemize}
+\item \emph{forming} (construction) : les membres se rencontrent et apprennent à se connaître,
+\item \emph{storming} (tension) : les membres se connaissent suffisamment pour critiquer les méthodes de travail et de comportement de chacun,
+\item \emph{norming} (normalisation) : structuration de l'équipe par des principes et des règles de fonctionnement acceptés par tous,
+\item \emph{performing} (production) : l'équipe est efficace et coopère pour atteindre les objectifs du groupe.
+\end{itemize}
+En ce qui nous concerne, nous avons alternés entre les deux premières phases (suite aux mouvements cités plus haut). Les différentes réunions que nous avons programmées nous ont permis de mieux nous connaître et de régler parfois des conflits personnels. Mais nous sommes un groupe trop jeune pour avoir établi des règles et des principes de fonctionnement.
+
+Il est évident qu'il n'est pas immédiat d'être une équipe performante. D'autant que nous n'avons pas que ce projet comme objectif individuel.
+Le bilan de l'équipe aurait peut-être été différent si le projet avait porté sur deux semestres plutôt qu'un...
+
+Dans chacune de ces phases, le leader du groupe a un rôle déterminant pour la bonne évolution de l'équipe.
+Dans notre équipe, nous n'avons pas défini de leader. On peut éventuellement aujourd'hui remettre en cause ce choix ou considérer qu'il n'était pas préférable d'en désigner un. 
+
+
+Par ailleurs, pour devenir une équipe agile performante, il semble nécessaire que chaque membre ait choisi son équipe et que l'équipe choisisse ses nouveaux membres (en partageant par exemple des valeurs et des motivations communes). Or la constitution de notre équipe nous a été imposée, ce qui peut être source de conflits personnels ou de démotivation. Cependant cela nous a obligé à communiquer pour mieux nous connaitre.
+
+\end{document}
